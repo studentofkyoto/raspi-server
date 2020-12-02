@@ -4,13 +4,13 @@ import pigpio
 
 
 class Irrp:
-    GLITCH = 100
-    PRE_MS = 200
-    POST_MS = 15
-    FREQ = 38.0
-    SHORT = 10
-    GAP_MS = 100
-    TOLERANCE = 15
+    GLITCH = 100  # ignore edges shorter than glitch microseconds, default 100 us
+    PRE_MS = 200  # expect post milliseconds of silence after code, default 15 ms
+    POST_MS = 15  # expect pre milliseconds of silence before code, default 200 ms
+    FREQ = 38.0  # IR carrier frequency, default 38 kHz
+    SHORT = 10  # reject codes with less than short pulses, default 10
+    GAP_MS = 100  # gap in milliseconds between transmitted codes, default 100 ms
+    TOLERANCE = 15  # consider pulses the same if within tolerance percent, default 15
 
     POST_US = POST_MS * 1000
     PRE_US = PRE_MS * 1000
